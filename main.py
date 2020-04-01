@@ -6,7 +6,7 @@ r = RandomWords()
 passwordlist = []
 
 for x in range(4):
-    passwordlist.append(r.get_random_word(hasDictionaryDef="true", includePartOfSpeech="noun,verb", minLength=5))
+    passwordlist.append(r.get_random_word(hasDictionaryDef="true", includePartOfSpeech="noun,verb", minLength=3, maxLength=5))
 
 passwordlist = [element.lower() for element in passwordlist] ; passwordlist
 print(*passwordlist, sep=" ")
