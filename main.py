@@ -1,12 +1,13 @@
 from __future__ import print_function
-from random_word import RandomWords
+import random
 
-r = RandomWords()
+def pgen():
+	with open('words_alpha.txt') as f:
+		word = f.readlines()
+		passwordlist = []
+		for _ in range(4): passwordlist.append(random.choice(word))
+		pw = []
+		for p in passwordlist: pw.append(p.strip())
+		print(" ".join(pw))
 
-passwordlist = []
-
-for x in range(4):
-    passwordlist.append(r.get_random_word(hasDictionaryDef="true", includePartOfSpeech="noun,verb", minLength=3, maxLength=5))
-
-passwordlist = [element.lower() for element in passwordlist] ; passwordlist
-print(*passwordlist, sep=" ")
+pgen()
