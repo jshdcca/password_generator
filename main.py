@@ -10,4 +10,10 @@ def pgen():
 		for p in passwordlist: pw.append(p.strip())
 		print(" ".join(pw))
 
-pgen()
+while True:
+	x = input('more? y/n: ')
+	if x == "y":
+		pgen()
+	else:
+		break
+		
